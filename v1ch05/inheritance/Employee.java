@@ -10,7 +10,7 @@ public class Employee
 
    public Employee(String name, double salary, int year, int month, int day)
    {
-      this.name = name;
+      this.name = name;//this关键字
       this.salary = salary;
       hireDay = LocalDate.of(year, month, day);
    }
