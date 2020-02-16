@@ -1,0 +1,48 @@
+Git命令
+来源:https://www.liaoxuefeng.com/wiki/
+0013739516305929606dd18361248578c67b8067c8c017b000/0013743858312764dca7ad6d0754f76aa562e3789478044000
+1.创建版本库 
+	$ mkdir learngit//创建一个目录
+	$ cd learngit//进入创建的目录
+	$ pwd//查看当前目录
+	$ git init//把当前目录变成Git可以管理的仓库
+2.添加文件（cat //查看文件。例如：$ cat main.c）
+	$ git add readme.txt//添加readme.txt文件
+	$ git commit -m "wrote a readme file"//进行说明
+3.提交修改和查看修改
+	$ git status//掌握仓库当前的状态
+	$ git diff readme.txt //具体修改了readme.txt什么内容
+	用2中的命令修改
+4.查看提交日志
+	$git log
+	$ git log --pretty=oneline//减少输出信息
+
+5.版本回退
+	$ git reset --hard HEAD^//
+	首先，Git必须知道当前版本是哪个版本，
+	在Git中，用HEAD表示当前版本，
+	也就是最新的提交1094adb...（注意我的提交ID和你的肯定不一样），
+	上一个版本就是HEAD^，上上一个版本就是HEAD^^，
+	当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+	$ git reflog//记录你的每一次命令
+小结：
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+6.stage缓存区
+	add：工作区->stage
+	commit:stage->head
+7.与远程仓库建立连接
+echo "# empty" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Tim-xiaofan/empty.git
+git push -u origin master
+
+或
+git remote add origin https://github.com/Tim-xiaofan/empty.git
+git push -u origin mastergit
